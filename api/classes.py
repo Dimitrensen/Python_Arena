@@ -4,6 +4,14 @@ class location:
     self.latitude=latitude
     self.longitude=longitude
 
+
+class username:
+  def username_generator(name, zodiac, body_type):
+    username = name[:2] + zodiac[:2] + body_type[:2]
+    return username
+
+  #new_account = account_generator(first_name, last_name)
+
 class personalityType:
   ESTJ=0
   ENTJ=1
@@ -45,6 +53,7 @@ class bodyType:
   petite=3
   masculine=4
 
+
 class hobbies:
   Football=0
   Yoga=1
@@ -54,6 +63,7 @@ class hobbies:
   Dancing=5
   Hiking=6
 
+
 class hairColor:
   Brunette=0
   Blond=1
@@ -61,24 +71,18 @@ class hairColor:
   Red=3
   Blue=4
 
+
 class gender:
   Female=0
   Male=1
   Other=2
+
 
 class role:
   User=0
   Admin=1
   Superuser=2
 
-
-class User(object):
-  def __init__(self,role,email,password):
-    self.role=role
-    self.email=email
-    self.password=password
-    self.userDetails
-    self.userPref
 
 class userDetails(object):
   def __init__(self,name,age,body_type,hair_color,personality_type,hobbies,zodiac,gender,location,description):
@@ -93,3 +97,12 @@ class userDetails(object):
     self.description=description
     self.age=age
 
+
+class User(object):
+  def __init__(self,role,email,password,username):
+    self.role=role
+    self.username=username.username_generator
+    self.email=email
+    self.password=password
+    self.userDetails
+    self.userPref
