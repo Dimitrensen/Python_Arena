@@ -4,9 +4,6 @@ class location:
 		self.latitude=latitude
 		self.longitude=longitude
 
-
-
-
 	#new_account = account_generator(first_name, last_name)
 
 class personalityType:
@@ -80,7 +77,6 @@ class role:
 	Admin=1
 	Superuser=2
 
-
 class userDetails(object):
 	def __init__(self,name,age,body_type,hair_color,personality_type,hobbies,zodiac,gender,location,description):
 		self.name=name
@@ -100,12 +96,12 @@ class User(object):
 		self.role=role
 		self.email=email
 		self.password=password
-		self.userDetails
-		self.userPref
+		self.Details=""
+		self.Preferences=""
 		self.username_generator()
 
 	def username_generator(self):
-		self.username = self.email[:3] + self.role[:2]
+		self.username = self.email[:3] + str(self.role)
 
 
 class userPreferences(object):
