@@ -73,9 +73,9 @@ class gender:
 
 
 class role:
-	User=0
-	Admin=1
-	Superuser=2
+	User="User"
+	Admin="Admin"
+	Superuser="Superuser"
 
 class userDetails(object):
 	def __init__(self,name,age,body_type,hair_color,personality_type,hobbies,zodiac,gender,location,description):
@@ -101,7 +101,7 @@ class User(object):
 		self.username_generator()
 
 	def username_generator(self):
-		self.username = self.email[:3] + str(self.role)
+		self.username = self.email[:3] + self.role[:2]
 
 
 class userPreferences(object):

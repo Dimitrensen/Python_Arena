@@ -1,0 +1,12 @@
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/user/create
+Content-Type: application/json
+
+{
+    "role":"User",
+    "email":"maria.hessen@banana.cz",
+    "password":198900
+}
