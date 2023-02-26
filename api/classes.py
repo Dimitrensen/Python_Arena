@@ -4,7 +4,7 @@ class location:
 		self.latitude=latitude
 		self.longitude=longitude
 
-	#new_account = account_generator(first_name, last_name)
+
 
 class personalityType:
 	ESTJ=0
@@ -92,13 +92,14 @@ class userDetails(object):
 
 
 class User(object):
-	def __init__(self,role,email,password):
+	def __init__(self,id,role,email,password):
 		self.role=role
 		self.email=email
 		self.password=password
 		self.Details=""
 		self.Preferences=""
 		self.username_generator()
+		self.id=id
 
 	def username_generator(self):
 		self.username = self.email[:3] + self.role[:2]

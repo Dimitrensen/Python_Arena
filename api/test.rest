@@ -10,3 +10,21 @@ Content-Type: application/json
     "email":"maria.hessen@banana.cz",
     "password":198900
 }
+
+###
+POST http://localhost:5000/details/user
+Content-Type: application/json
+
+{
+		"name":"name",
+		"body_type": 2,
+		"hair_color": 0,
+		"personality_type": 11,
+		"hobbies": 0,
+		"zodiac": 2,
+		"gender": 2,
+		"location": {"longitude":42, "latitude":32},
+		"description":"I am very interesting, pick me!",
+		"age": 35
+
+}
