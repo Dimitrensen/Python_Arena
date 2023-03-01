@@ -28,3 +28,15 @@ Content-Type: application/json
 		"age": 35
 
 }
+
+###
+POST http://localhost:5000/test/route
+Content-Type: application/json
+
+{
+		"name":"Elias",
+		"personality_type": 10,
+		"zodiac": 9,
+		"age": 18
+
+}
