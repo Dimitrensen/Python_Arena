@@ -1,0 +1,16 @@
+import sqlite3
+
+conn = sqlite3.connect('urls.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS urls (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        long_url TEXT NOT NULL,
+        short_url TEXT NOT NULL
+    )
+''')
+conn.commit()
+
+# close the connection
+conn.close()

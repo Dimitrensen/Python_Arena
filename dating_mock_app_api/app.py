@@ -60,6 +60,5 @@ def create_user_details():
     #         user.Details=details
     #         break
     
-
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)

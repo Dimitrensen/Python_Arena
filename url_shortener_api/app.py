@@ -43,10 +43,6 @@ def shorten_url():
             urls.append(url)
             return jsonify({'short_url': short_url})
 
-# @app.route('/shorten, methods=['POST']')
-# def shorten_url():
-#     long_url = request.json['url']
-#     #see where the latest number was and take it from there
 
 @app.route('/<short_url>', methods=['GET'])
 def redirect_to_long(short_url):
