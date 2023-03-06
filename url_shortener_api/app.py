@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, redirect, request
 import random
 import string
 
@@ -33,15 +33,12 @@ urls = []
 @app.route('/shorten', methods=['POST'])
 def shorten_url():
     long_url = request.json['url']
-    while True:
         # generate random short url
-        short_url = str(random.randint(1, 999999999))
-        # check if short url already exists
-        if not any(url.short_url == short_url for url in urls):
-            # create url object and add to database
-            url = UrlShortener(long_url, short_url)
-            urls.append(url)
-            return jsonify({'short_url': short_url})
+    short_url = str(random.randint(1, 999999999))
+        # create url object and add to database
+    url = UrlShortener(long_url, short_url)
+    urls.append(url)
+    return url.__dict__
 
 
 @app.route('/<short_url>', methods=['GET'])
@@ -49,7 +46,7 @@ def redirect_to_long(short_url):
     # look up original url in database
     for url in urls:
         if url.short_url == short_url:
-            return jsonify({'long_url': url.long_url})
+            return redirect(url.long_url, code=302)
     # if short url not found
     return jsonify({'error': 'Short URL not found'})
 

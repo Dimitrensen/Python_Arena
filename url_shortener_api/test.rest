@@ -3,9 +3,8 @@ POST http://localhost:5000/shorten
 Content-Type: application/json
 
 {
-    "url":"long_url"
+    "url":"www.google.com"
 }
 
 ###
 GET http://localhost:5000/<short_url>
-Content-Type: application/json
