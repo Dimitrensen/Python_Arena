@@ -10,12 +10,10 @@ def get_db():
     return db
 
 class UrlShortener:
-    next_id = 1
 
     def __init__(self, long_url):
+        self.id 
         self.long_url = long_url
-        self.short_url = str(UrlShortener.next_id)
-        UrlShortener.next_id += 1
 
 @app.route('/shorten', methods=['POST'])
 def shorten_url():

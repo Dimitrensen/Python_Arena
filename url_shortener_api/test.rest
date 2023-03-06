@@ -7,4 +7,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/<short_url>
+GET http://localhost:5000/569163824

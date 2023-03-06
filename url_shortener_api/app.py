@@ -11,25 +11,6 @@ class UrlShortener:
 
 urls = []
 
-# @app.route('/shorten', methods=['POST'])
-# def shorten_url():
-#     long_url = request.json['url']
-#     short_url = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
-## I don't understand the line above.
-#     url = UrlShortener(long_url, short_url)
-#     urls.append(url)
-#     return jsonify({'short_url': short_url})
-
-# @app.route('/<short_url>', methods=['GET'])
-# def redirect_to_long(short_url):
-#     for url in urls:
-#         if url.short_url == short_url:
-#             return jsonify({'long_url': url.long_url})
-#     return jsonify({'error': 'Short URL not found'})
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 @app.route('/shorten', methods=['POST'])
 def shorten_url():
     long_url = request.json['url']
