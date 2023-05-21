@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import sqlite3
 import random
+import bcrypt
 
 app = Flask(__name__)
 app.config['DATABASE'] = 'passwords.db'
@@ -23,9 +24,10 @@ init_db()
 @app.route('/generate', methods=['POST'])
 def generate_password():
     password = str(random.randint(100000000, 999999999))
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     with app.app_context():
         db = get_db()
-        db.execute('INSERT INTO passwords (password) VALUES (?)', (password,))
+        db.execute('INSERT INTO passwords (password) VALUES (?)', (hashed_password,))
         db.commit()
     return jsonify({'password': password})
 

@@ -1,0 +1,3 @@
+# Remember that when comparing the password later,
+# you'll need to use bcrypt.checkpw to compare the entered password
+# with the hashed password from the database.
